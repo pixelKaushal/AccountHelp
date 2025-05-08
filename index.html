@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accountancy-Help</title>
+    <link rel="shortcut icon" href="acchelp.png" type="image/x-icon" />
+    <link rel="stylesheet" href="a.css" />
+  </head>
+  <body>
+    <div class="tb">
+      <h2 id="bname">Name of Business</h2>
+      <h3>Trial Balance</h3>
+      <p id="bdate">As on DATE</p>
+      <div class="ct">
+        <table id="tbt">
+          <thead>
+            <tr>
+              <th>S.N.</th>
+              <th>Particulars</th>
+              <th></th>
+              <th>Debit</th>
+              <th>Credit</th>
+            </tr>
+          </thead>
+          <tbody id="tbt-body"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"><strong>Total</strong></td>
+              <td id="debit-total">0</td>
+              <td id="credit-total">0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="choose">
+      <form id="input">
+        <section id="labels" class="fs">
+          <label for="cname">Company Name:</label>
+          <label for="date">Date:</label>
+        </section>
+        <section id="inputs" class="fs">
+          <input type="text" id="cname" name="cname" required />
+          <input type="date" id="date" name="date" required />
+        </section>
+
+        <button type="submit" id="ds">Submit</button>
+      </form>
+      <br />
+    </div>
+    <form id="p">
+      <label for="Particulars">
+        Particulars
+        <input type="text" id="Particulars" name="Particulars" required />
+      </label>
+      <label for="amount">
+        Amount
+        <input type="number" id="amount" name="amount" required />
+      </label>
+      <button type="submit" id="dataS">Submit</button>
+    </form>
+    <form id="checks">
+      <label for="check">Check</label>
+      <input type="input" id="check" name="check" />
+      <button type="submit" id="dataC">Submit</button>
+    </form>
+    <button id="print" style="text-align: center; margin-left: 5%">
+      PRINT
+    </button>
+    <p id="err" style="text-align: center"></p>
+    <p id="dbt" style="text-align: center">Things that are stored in debit:</p>
+    <br />
+    <hr />
+    <hr />
+    <hr />
+    <br />
+    <p id="cbt" style="text-align: center">Things that are stored in credit:</p>
+    <script src="a.js"></script>
+  </body>
+</html>
