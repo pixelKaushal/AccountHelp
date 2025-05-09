@@ -257,3 +257,87 @@ sbtn3.addEventListener("click", function (e) {
     form3.reportValidity();
   }
 });
+const pbtn = document.getElementById("print");
+
+if (pbtn) {
+  pbtn.addEventListener("click", function () {
+    let name = prompt("Enter Auditor's name");
+    const printWindow = window.open("", "_blank");
+
+    const tableHTML = table.outerHTML;
+    const dateStr = document.getElementById("date").value;
+
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    function getOrdinal(n) {
+      const s = ["th", "st", "nd", "rd"],
+        v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
+    }
+    const bname = document.getElementById("bname");
+    const formattedDate = `${getOrdinal(day)} ${monthNames[month]} ${year}`;
+    const htmlContent = `
+      <html>
+        <head>
+          <title>Trial Balance</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              padding: 20px;
+            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 20px;
+            }
+            th, td {
+              border: 1px solid #000;
+              padding: 8px;
+              text-align: center;
+            }
+            h1, h2 {
+              text-align: center;
+            }
+            p {
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+         <h2>${document.getElementById("cname").value}</h2>
+          <h1>Trial Balance</h1>
+          <p>As on ${formattedDate}</p>
+         
+          ${tableHTML}
+      <h3>Prepared by: ${name}</h3>
+        </body>
+      </html>
+    `;
+
+    printWindow.document.open();
+    printWindow.document.write(htmlContent);
+    printWindow.document.close();
+
+    printWindow.onload = function () {
+      printWindow.print();
+    };
+  });
+}
