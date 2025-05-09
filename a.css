@@ -2,104 +2,203 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
+
+body {
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+}
+
 .tb {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 30px;
 }
+
+#bname {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+h3,
+#bdate {
+  color: #d1d1d1;
+}
+
 #tbt {
-  width: 70%;
-  height: 100%;
-  background-color: #fff;
-  margin-top: 5%;
-  left: 0;
-  z-index: -1;
+  width: 80%;
+  margin-top: 30px;
   border-collapse: collapse;
+  background: #2c2c3e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
 }
+
 th,
 td {
-  padding: 10px;
+  padding: 12px;
   text-align: center;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #444;
 }
+
 th {
-  background-color: #f2f2f2;
-  color: black;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 500;
 }
+
+tfoot td {
+  font-weight: bold;
+  background-color: #333;
+}
+
 .ct {
   display: flex;
-  flex-direction: row;
-  width: 100%;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  margin-top: 20px;
 }
+
 .choose {
-  margin-top: 5%;
+  margin-top: 30px;
   margin-left: 1%;
   display: flex;
   flex-direction: row;
-  width: 30%;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
+
 .fs {
   display: flex;
   flex-direction: column;
-  margin-right: 3px;
+  margin: 0 10px;
 }
-.fs label,
+
+.fs label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
 .fs input {
-  padding-bottom: 5px;
-  margin-bottom: 2px;
+  padding: 8px 12px;
+  background-color: #2c2c3e;
+  color: #f5f5f5;
+  border: 1px solid #555;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
 }
+
+.fs input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+}
+
 #input {
   display: flex;
   flex-direction: row;
-}
-#labels {
   align-items: flex-end;
 }
+
 #ds,
 #dataS,
 #dataC,
-#print {
-  cursor: pointer;
-  outline: 0;
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: 6px 12px;
-  font-size: 1rem;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  color: #0d6efd;
-  border-color: #0d6efd;
-  :hover {
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-  }
+#print,
+#fata,
+#fapa,
+#fabs {
+  margin: 10px;
+  padding: 8px 16px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-weight: 500;
 }
+
+#ds:hover,
+#dataS:hover,
+#dataC:hover,
+#print:hover,
+#fata:hover,
+#fapa:hover,
+#fabs:hover {
+  background-color: #084298;
+}
+
 #p {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
-  padding: 10px;
+  margin-top: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+
+#p label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+#p input {
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #2c2c3e;
+  color: #f5f5f5;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
+#checks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#check {
+  padding: 8px;
+  background-color: #2c2c3e;
+  color: #f5f5f5;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
+#err,
+#dbt,
+#cbt {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+hr {
+  border: 1px solid #555;
+  width: 90%;
+  margin: 10px auto;
+}
+
 .styled-box {
-  background: #f9f9f9;
+  background: #2c2c3e;
   padding: 15px 20px;
-  margin: 20px 0;
+  margin: 20px auto;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   max-height: 300px;
   overflow-y: auto;
+  width: 80%;
 }
 
 .styled-list {
@@ -110,9 +209,14 @@ th {
 
 .styled-list li {
   margin: 5px 0;
-  padding: 6px 10px;
-  background: #ffffff;
+  padding: 10px;
+  background: #3a3a4f;
   border-radius: 6px;
-  font-family: "Segoe UI", sans-serif;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+  color: #fff;
+}
+
+.styled-list li:hover {
+  background: #4a4a6a;
 }
