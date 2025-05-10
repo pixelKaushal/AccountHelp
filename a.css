@@ -220,3 +220,20 @@ hr {
 .styled-list li:hover {
   background: #4a4a6a;
 }
+.ta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+.ta table {
+  width: 80%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  background: #2c2c3e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+}
