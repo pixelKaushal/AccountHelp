@@ -180,11 +180,7 @@ const fatad = [
 const fatac = ["sales", "purchase return", "closing stock"];
 
 // =================== UTILITY FUNCTIONS ===================
-/**
- * Formats a date object into a readable string (e.g., "1st January 2023")
- * @param {Date} dateStr - The date string to format
- * @returns {string} Formatted date string
- */
+
 function formatDate(dateStr) {
   const date = new Date(dateStr);
   const day = date.getDate();
@@ -215,13 +211,7 @@ function formatDate(dateStr) {
   return `${getOrdinal(day)} ${monthNames[month]} ${year}`;
 }
 
-/**
- * Generates styled HTML for displaying account items
- * @param {string} title - Section title
- * @param {Array} items - List of account items
- * @param {string} color - Border color
- * @returns {string} HTML string
- */
+
 function generateStyledList(title, items, color) {
   return `
     <div class="styled-box" style="border-left: 6px solid ${color};">
